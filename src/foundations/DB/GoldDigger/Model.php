@@ -2,10 +2,12 @@
 
 namespace Foundations\DB\GoldDigger;
 
+use BadMethodCallException;
 use Foundations\DB\GoldDigger\Relationships\BelongsTo;
 use Foundations\DB\GoldDigger\Relationships\BelongsToMany;
 use Foundations\DB\GoldDigger\Relationships\HasMany;
 use Foundations\DB\GoldDigger\Relationships\HasOne;
+use InvalidArgumentException;
 
 class Model{
     protected static ?string $table = null;
@@ -50,6 +52,7 @@ class Model{
 
     public function __get(string $key)
     {
+        $key = strtolower($key);
         if (isset($this->attributes[$key])) {
             return $this->attributes[$key];
         }
@@ -68,6 +71,7 @@ class Model{
 
     public function __set(string $key, $value): void
     {
+        $key = strtolower($key);
         $this->attributes[$key] = $value;
     }
 
@@ -77,6 +81,34 @@ class Model{
             $this->attributes,
             $this->relationships ?: []
         );
+    }
+
+    public static function __callStatic(string $method, array $args)
+    {
+        if ($method === 'update') {
+            return static::handleStaticUpdate($args);
+        }
+
+        if ($method === 'delete') {
+            return static::handleStaticDelete($args);
+        }
+
+        throw new BadMethodCallException("Method {$method} does not exist.");
+    }
+
+
+
+    public function __call(string $method, array $args)
+    {
+        if ($method === 'update') {
+            return $this->instantUpdate(...$args);
+        }
+
+        if ($method === 'delete') {
+            return $this->instantDelete(...$args);
+        }
+
+        throw new BadMethodCallException("Method {$method} does not exist.");
     }
     
     public function load(string $key): self
@@ -107,7 +139,36 @@ class Model{
         return $model;
     }
 
-    public static function update(array $wheres, array $attributes){
+    public function instantUpdate(array $attributes, ?array $wheres = null){
+        if($wheres){
+            return static::staticUpdate($attributes, $wheres);
+        }else{
+            $id = null;
+            if(isset($this->attributes['id'])){
+                $id = $this->attributes['id'];
+            }else{
+                if(isset($attributes['id'])){
+                    $id = $attributes['id'];
+                }
+            }
+            return static::staticUpdate($attributes, ['id'=> $id]);
+        }
+    }
+
+    protected static function handleStaticUpdate(array $args)
+    {
+        if (count($args) !== 2) {
+            throw new InvalidArgumentException(
+                'Static update expects (attributes, wheres)'
+            );
+        }
+
+        [$attributes, $wheres] = $args;
+
+        return static::staticUpdate($attributes, $wheres);
+    }
+
+    protected static function staticUpdate(array $attributes, array $wheres){
         $query = static::query()->update($attributes);
         foreach ($wheres as $key => $value) {
             $query->where($key, "=", $value);
@@ -115,8 +176,33 @@ class Model{
         return $query->get();
     }
 
-    public static function delete(array $wheres){
-        $query = static::query();
+    public function instantDelete(?array $wheres = null){
+        if($wheres){
+            return static::staticDelete($wheres);
+        }else{
+            $id = null;
+            if(isset($this->attributes['id'])){
+                $id = $this->attributes['id'];
+            }
+            return static::staticDelete(['id'=> $id]);
+        }
+    }
+
+    protected static function handleStaticDelete(array $args)
+    {
+        if (count($args) !== 1) {
+            throw new InvalidArgumentException(
+                'Static delete expects (wheres)'
+            );
+        }
+
+        [$wheres] = $args;
+
+        return static::staticDelete($wheres);
+    }
+
+    public static function staticDelete(array $wheres){
+        $query = static::query()->delete();
         foreach ($wheres as $key => $value) {
             $query->where($key, "=", $value);
         }

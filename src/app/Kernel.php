@@ -2,7 +2,8 @@
 
 namespace App;
 
-use App\Middlewares\isAuthed;
+use App\Middlewares\IsAuthed;
+use App\Middlewares\IsGuest;
 use Foundations\Middlewares\Kernel as MiddlewaresKernel;
 
 class Kernel extends MiddlewaresKernel
@@ -13,7 +14,8 @@ class Kernel extends MiddlewaresKernel
     ];
 
     protected static array $middlewareAliases = [
-        
+        "auth"=> IsAuthed::class,
+        "guest"=> IsGuest::class
     ];
 
 }

@@ -1,200 +1,255 @@
 @layout('templates.layout')
-    <!-- Hero Section -->
-    <section class="w-[87%] h-fit m-auto mt-[100px] grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div class="flex flex-col justify-center gap-8">
-            <h1 class="text-[64px] lg:text-[84px] font-bold text-[#010205] leading-tight">
-                Crafting <span class="hero-gradient">Digital Excellence</span>, <br> One Project at a Time
-            </h1>
-            <p class="text-[18px] lg:text-[16px] font-normal text-[#666] text-justify max-w-[550px] leading-relaxed">
-                Welcome to NovaCraft Studio, where creativity meets technology. We're a dedicated team of 12 digital experts, passionate about transforming your ideas into exceptional digital experiences.
-            </p>
-            <div class="flex items-center gap-[32px] mt-8">
-                <button class="group w-[220px] text-[16px] h-[56px] bg-[#0A66C2] hover:bg-[#0a5cad] text-white rounded-full font-semibold transition duration-300 flex items-center justify-center shadow-lg hover:shadow-xl">
-                    Get Started
-                    <i class="fa-solid fa-arrow-right ml-4 group-hover:translate-x-2 transition-transform duration-300"></i>
-                </button>
-                <a href="#our-work" class="text-[#010205] text-[18px] font-semibold hover:text-[#0A66C2] underline underline-offset-4 transition duration-300 flex items-center gap-2">
-                    View Our Work
-                    <i class="fa-solid fa-arrow-down text-sm"></i>
-                </a>
-            </div>
-        </div>
-        <div class="w-full">
-            <img src="@asset('images/banner.jpg')" 
-                     alt="Banner" 
-                     class="w-full h-full object-contain rounded-lg">
-        </div>
-    </section>
-
-    <!-- What We Do Section -->
-    <section class="w-[87%] h-[500px] m-auto mt-[100px] grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div>
-            <img src="@asset('images/scndbanner.jpg')" 
-                     class="w-full h-full object-contain rounded-lg" 
-                     alt="second banner">
-        </div>
-        <div class="flex flex-col justify-center gap-6 px-6 md:px-12">
-            <div class="flex items-center gap-3 mb-2">
-                <div class="w-8 h-1 bg-[#0A66C2] rounded-full"></div>
-                <span class="text-[#0A66C2] font-semibold text-sm uppercase tracking-wider">Our Services</span>
-            </div>
-            <h2 class="text-[48px] font-bold text-[#010205] leading-tight">What We Do?</h2>
-            <p class="text-[18px] font-normal text-[#666] text-justify max-w-[600px] leading-relaxed">
-                At NovaCraft Studio, we specialize in creating digital solutions that make an impact. Whether you're launching a new brand, building a web application, or reimagining your digital presence, our team has the expertise to deliver results that exceed expectations.
-            </p>
-            <h3 class="text-[40px] font-bold text-[#010205] mt-[40px]">Why Choose NovaCraft?</h3>
-            <div class="space-y-4 mt-4">
-                <div class="flex items-start gap-4 p-4 bg-blue-50/50 rounded-lg">
-                    <div class="w-8 h-8 bg-[#0A66C2] rounded-full flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-user-check text-white text-sm"></i>
-                    </div>
-                    <div>
-                        <p class="text-[#010205] font-semibold">Personal Attention</p>
-                        <p class="text-[#666] text-sm mt-1">With a close-knit team of 12, every project receives the focus it deserves.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 p-4 bg-blue-50/50 rounded-lg">
-                    <div class="w-8 h-8 bg-[#0A66C2] rounded-full flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-handshake text-white text-sm"></i>
-                    </div>
-                    <div>
-                        <p class="text-[#010205] font-semibold">Collaborative Process</p>
-                        <p class="text-[#666] text-sm mt-1">We work alongside you, ensuring your vision guides every decision.</p>
-                    </div>
-                </div>
-                <div class="flex items-start gap-4 p-4 bg-blue-50/50 rounded-lg">
-                    <div class="w-8 h-8 bg-[#0A66C2] rounded-full flex items-center justify-center flex-shrink-0">
-                        <i class="fas fa-award text-white text-sm"></i>
-                    </div>
-                    <div>
-                        <p class="text-[#010205] font-semibold">Quality Craftsmanship</p>
-                        <p class="text-[#666] text-sm mt-1">We don't just deliver projects—we craft digital experiences that last.</p>
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+    <div class="flex flex-col flex-1">
+        <!-- Hero Section -->
+        <section class="bg-white dark:bg-[#101922]">
+            <div class="px-6 lg:px-40 flex justify-center py-5">
+                <div class="flex flex-col max-w-[1200px] flex-1">
+                    <div class="@container">
+                        <div class="flex flex-col gap-10 py-10 lg:py-20 lg:gap-16 lg:flex-row items-center">
+                            <div class="flex flex-col gap-6 lg:flex-1 lg:max-w-[50%] text-center lg:text-left">
+                                <div class="flex flex-col gap-4">
+                                    <h1
+                                        class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-[-0.033em] lg:text-6xl">
+                                        Discover, Borrow, and Read.
+                                    </h1>
+                                    <h2
+                                        class="text-[#617589] dark:text-[#9aaab9] text-lg font-normal leading-relaxed lg:text-xl">
+                                        Manage your reading list and access thousands of titles from our community
+                                        library. Join today to start your journey.
+                                    </h2>
+                                </div>
+                                <div class="flex flex-wrap gap-3 justify-center lg:justify-start pt-2">
+                                    <button
+                                        class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-primary text-white text-base font-bold hover:bg-blue-600 transition-colors shadow-lg shadow-blue-500/20">
+                                        <span>Join as Reader</span>
+                                    </button>
+                                    <button
+                                        class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-12 px-6 bg-[#f0f2f4] dark:bg-[#22303e] text-[#111418] dark:text-white text-base font-bold hover:bg-[#e1e4e8] dark:hover:bg-[#2d3f50] transition-colors">
+                                        <span>Admin Access</span>
+                                    </button>
+                                </div>
+                                <div
+                                    class="flex items-center justify-center lg:justify-start gap-4 mt-4 text-sm text-[#617589]">
+                                    <div class="flex -space-x-2">
+                                        <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-200"
+                                            data-alt="User avatar"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5leXTm385bV3xXu3I5IIguREy_ILr_XTAg_YTomTO0VaT74uYhj9mYuMCP2lymjiYtDeX7adpbDbaDgK2hgGHfM1vCszACiKhow-xZBQoB0BurDKO0pgdWlfSwEL7i1irfoP4C5V3prEPO5ynBpBsGI3LYvkweTKJm5v1Z4McxAe8AJoeVPK9nMLcdA-U5rx6dKK9HQrxiHeJMPmrBYUetVWoQsGokyU9amjYznETx4ftKQNMLoy-qqwTewt5eT5xsbCtuQ2Z_v5M')">
+                                        </div>
+                                        <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-200"
+                                            data-alt="User avatar"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCsiI9OOGQjEhv-xeVuhs4xlGD_DaqTBKYx2EJx4nTQHuFuPTDHAILPd94UV8T6vhyTH19zWG_Qa3yOuAWEecDZBU2YrZSD0GQ86QopLewVb9i5aQ47vxmwVSqx2TKmSHoy_u510CUZleDZhWn6B8vgITAfDRqipeFQVguEF-Od7L0_DoEzJChBwwgFDKeHiT8LhumxnCkTciHzXpw0NrDBb_B-Uqv7_nHg_HmYtqdhxMpnTg8UK25Bh6gMxijMIKEY2e0dafdq42T3')">
+                                        </div>
+                                        <div class="w-8 h-8 rounded-full border-2 border-white bg-gray-200"
+                                            data-alt="User avatar"
+                                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDNDr38A81dR7s9Mt8EqFUyuiMdle7FM2CcPNCyf3DMDxZbMInyQ7AIObyniLy1IG3sW4DOlO9JzzxMreqbYypZzBWVN7jQqS3spSxpXVAgXhS2ZW0n05n5r2L7n3r7nIDaG3zZurQ1rBNin4Hf6OuhOUItbUKq8ZJEM9oom5g7Z_JM4v25TTwPcYb_EX5m6v-RsWHxIy9Jl8_VrEgTwEdWA2ufPgGHEifJhf0rAWlPJssS2iIP9DgBfJmY_PQFfezamWrBUiZrsWNC')">
+                                        </div>
+                                    </div>
+                                    <p>Join 2,000+ happy readers</p>
+                                </div>
+                            </div>
+                            <div
+                                class="w-full lg:flex-1 lg:h-auto rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/10">
+                                <div class="w-full aspect-[4/3] bg-cover bg-center"
+                                    data-alt="Modern library interior with bookshelves and comfortable reading area"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAGSS-VzVRMVr0yVsp9n5GUSc3bKjlDDzxR2lskrEYk_zKpzBkSiVo3MtNP86ZHZ4ydTC55YETiTxx2OJeenPdw0Ai2xuDEaTR_RjkMgcoAf-yDz7Ehs-2zCHzC58Bj1h9_VyaKhOXb_kvK6ycIyZYY61V7OyPdymKpE4mbmxFlDFq0EJW-htPGPVzkAgOwYIZ70mViyhoLwPgN60unzwjmG01anbeo2ygXodALwQVuh501fFSARel7iaGIJH_xMhS26DHzt4Y0TBH6");'>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Trusted by Global Brands Section -->
-    <section class="w-[87%] m-auto mt-[280px] text-center">
-        <div class="flex items-center justify-center gap-3 mb-4">
-            <div class="w-8 h-1 bg-[#0A66C2] rounded-full"></div>
-            <span class="text-[#0A66C2] font-semibold text-sm uppercase tracking-wider">Partnerships</span>
-            <div class="w-8 h-1 bg-[#0A66C2] rounded-full"></div>
-        </div>
-        <h2 class="text-[48px] font-bold text-[#010205] mb-8">Trusted by Global Brands</h2>
-        <p class="text-[18px] font-normal text-[#666] max-w-[700px] mx-auto mb-16 leading-relaxed">
-            We work with forward-thinking brands across industries. Our team brings cutting-edge solutions to help companies grow and scale in the digital world.
-        </p>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-8 justify-center items-center py-8">
-            <div class="brand-logo p-4 bg-gray-50 rounded-lg">
-                <div class="h-12 flex items-center justify-center">
-                    <span class="font-bold text-gray-700 text-xl">BRAND 01</span>
-                </div>
-            </div>
-            <div class="brand-logo p-4 bg-gray-50 rounded-lg">
-                <div class="h-12 flex items-center justify-center">
-                    <span class="font-bold text-gray-700 text-xl">BRAND 02</span>
-                </div>
-            </div>
-            <div class="brand-logo p-4 bg-gray-50 rounded-lg">
-                <div class="h-12 flex items-center justify-center">
-                    <span class="font-bold text-gray-700 text-xl">BRAND 03</span>
-                </div>
-            </div>
-            <div class="brand-logo p-4 bg-gray-50 rounded-lg">
-                <div class="h-12 flex items-center justify-center">
-                    <span class="font-bold text-gray-700 text-xl">BRAND 04</span>
-                </div>
-            </div>
-            <div class="brand-logo p-4 bg-gray-50 rounded-lg">
-                <div class="h-12 flex items-center justify-center">
-                    <span class="font-bold text-gray-700 text-xl">BRAND 05</span>
-                </div>
-            </div>
-            <div class="brand-logo p-4 bg-gray-50 rounded-lg">
-                <div class="h-12 flex items-center justify-center">
-                    <span class="font-bold text-gray-700 text-xl">BRAND 06</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="w-[87%] m-auto mt-[100px]">
-        <div class="text-center mb-16">
-            <div class="flex items-center justify-center gap-3 mb-4">
-                <div class="w-8 h-1 bg-[#0A66C2] rounded-full"></div>
-                <span class="text-[#0A66C2] font-semibold text-sm uppercase tracking-wider">Testimonials</span>
-                <div class="w-8 h-1 bg-[#0A66C2] rounded-full"></div>
-            </div>
-            <h2 class="text-[48px] font-bold text-[#010205] mb-4">What Our Clients Say</h2>
-            <p class="text-[18px] font-normal text-[#666] max-w-[650px] mx-auto mb-8 leading-relaxed">
-                Our clients trust us to deliver innovative solutions that enhance their digital presence. Here's what they have to say:
-            </p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="modern-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                <div class="text-[#0A66C2] text-2xl mb-4">"</div>
-                <p class="text-[16px] text-[#666] mb-6 leading-relaxed">"NovaCraft Studio exceeded our expectations. Their team provided exceptional attention to detail and delivered a product that perfectly captured our brand's vision."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span class="font-bold text-[#0A66C2]">JD</span>
-                    </div>
-                    <div>
-                        <h4 class="text-[18px] font-bold text-[#010205]">John Doe</h4>
-                        <p class="text-[#666] text-sm">CEO, Example Company</p>
+        </section>
+        <!-- Feature Section -->
+        <section class="bg-[#f8f9fa] dark:bg-[#16212e]">
+            <div class="px-6 lg:px-40 flex justify-center py-5">
+                <div class="flex flex-col max-w-[1200px] flex-1">
+                    <div class="flex flex-col gap-10 py-16">
+                        <div class="flex flex-col gap-4 text-center items-center">
+                            <h2 class="text-[#111418] dark:text-white text-[32px] font-bold leading-tight lg:text-4xl">
+                                Why Join?
+                            </h2>
+                            <p
+                                class="text-[#617589] dark:text-[#9aaab9] text-base font-normal leading-normal max-w-[600px]">
+                                Experience the best way to manage your reading journey with our smart features
+                                designed for book lovers.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div
+                                class="flex flex-1 gap-4 rounded-xl border border-[#dbe0e6] dark:border-[#2a3441] bg-white dark:bg-[#101922] p-6 flex-col hover:border-primary/50 transition-colors group">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">manage_search</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Smart
+                                        Search</h3>
+                                    <p class="text-[#617589] dark:text-[#9aaab9] text-sm font-normal leading-relaxed">
+                                        Find books by genre, author, or ISBN instantly with our optimized search
+                                        engine.</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-1 gap-4 rounded-xl border border-[#dbe0e6] dark:border-[#2a3441] bg-white dark:bg-[#101922] p-6 flex-col hover:border-primary/50 transition-colors group">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">event_available</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">
+                                        Borrow Tracking</h3>
+                                    <p class="text-[#617589] dark:text-[#9aaab9] text-sm font-normal leading-relaxed">
+                                        Never miss a due date. Keep track of your borrowed books and history easily.
+                                    </p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex flex-1 gap-4 rounded-xl border border-[#dbe0e6] dark:border-[#2a3441] bg-white dark:bg-[#101922] p-6 flex-col hover:border-primary/50 transition-colors group">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                                    <span class="material-symbols-outlined">collections_bookmark</span>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">
+                                        Curated Collections</h3>
+                                    <p class="text-[#617589] dark:text-[#9aaab9] text-sm font-normal leading-relaxed">
+                                        Explore themed lists and recommendations hand-picked by our expert
+                                        librarians.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="modern-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                <div class="text-[#0A66C2] text-2xl mb-4">"</div>
-                <p class="text-[16px] text-[#666] mb-6 leading-relaxed">"Working with NovaCraft was a game-changer for our business. Their team's creativity and expertise helped us achieve goals we didn't think were possible."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span class="font-bold text-[#0A66C2]">JS</span>
+        </section>
+        <!-- Popular Reads Section -->
+        <section class="bg-white dark:bg-[#101922]">
+            <div class="px-6 lg:px-40 flex justify-center py-5">
+                <div class="flex flex-col max-w-[1200px] flex-1 py-10">
+                    <div class="flex items-center justify-between px-2 pb-6 pt-5">
+                        <h2
+                            class="text-[#111418] dark:text-white text-[28px] font-bold leading-tight tracking-[-0.015em]">
+                            Popular Reads</h2>
+                        <a class="text-primary font-bold text-sm hover:underline flex items-center gap-1" href="#">
+                            View all <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+                        </a>
                     </div>
-                    <div>
-                        <h4 class="text-[18px] font-bold text-[#010205]">Jane Smith</h4>
-                        <p class="text-[#666] text-sm">Marketing Director, Tech Innovators</p>
+                    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 p-2">
+                        <!-- Book Card 1 -->
+                        <div class="flex flex-col gap-3 group cursor-pointer relative">
+                            <div
+                                class="relative w-full aspect-[2/3] overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-shadow">
+                                <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="Book cover of The Great Gatsby showing art deco style face"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDUVH9cLZyNcGp8Gq87VRehCNx4ImQApii_Q1pbrO9-6nNxJoHO6mtUkQFHSHSro3SdIIMc-lrHI6SPZAJZYS6QcntrELFVZZU4riSxiI4sQsKx5F29kkXe8aKArZH_gleu7ixbP20xNSBv-Tu8xdnc5gk-iQTuwIIY7mpsIUMfErO1ED9ShtQ5nMSwR6yrvza4yk2dr3dNAfmR1Ka65Ki_TuqAKRB4ROaRo0yj1OjFxxxCKx2QZ3GLX0DjiFx8JfMm3iVIBoSY_MCp");'>
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold bg-primary px-3 py-1 rounded-full">Login
+                                        to Borrow</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-[#111418] dark:text-white text-base font-bold leading-tight truncate">
+                                    The Great Gatsby</p>
+                                <p
+                                    class="text-[#617589] dark:text-[#9aaab9] text-sm font-medium leading-normal truncate">
+                                    F. Scott Fitzgerald</p>
+                            </div>
+                        </div>
+                        <!-- Book Card 2 -->
+                        <div class="flex flex-col gap-3 group cursor-pointer relative">
+                            <div
+                                class="relative w-full aspect-[2/3] overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-shadow">
+                                <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="Book cover of 1984 showing big brother eye graphic"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCn3c0yQjBEiBh34uUnkKsGSbxx0iAxfwOdg6MNN8Lh_yCAxMdeafsOnGbEZYfEwp8Afd9W4BIMTa3Td32m_iWPhhrKBbKkTWKmaEPA5ZweJUJeAQ53b71xQvWrW81tSg-09494hw6hnzSXCRSJPQ_nVnmQmBjeC7vD7-I2Rs4TTleZSyoSA_-yTWPyHwKrB-TG_V1aINDRyMQb33HlXywZuOfGRsRZqBBviq4P3773jrjMgyfmS4icDpYEwygjb-SH31cEYkT3pLkk");'>
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold bg-primary px-3 py-1 rounded-full">Login
+                                        to Borrow</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-[#111418] dark:text-white text-base font-bold leading-tight truncate">
+                                    1984</p>
+                                <p
+                                    class="text-[#617589] dark:text-[#9aaab9] text-sm font-medium leading-normal truncate">
+                                    George Orwell</p>
+                            </div>
+                        </div>
+                        <!-- Book Card 3 -->
+                        <div class="flex flex-col gap-3 group cursor-pointer relative">
+                            <div
+                                class="relative w-full aspect-[2/3] overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-shadow">
+                                <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="Book cover of To Kill a Mockingbird showing mockingbird silhouette"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCh7HZwxjTb6qEuIsjFrNmImrlhTKNTTtJkbAV9NSUFCAQdTlDbtso8Z2xWUwFp3j5jWQjY6MI3V0BElaWWPhveqgToOWse530G-U8xxWZeL7G3NpPbeZpcEW1F3CmKmwLCxbJd1yufrmnlJyMLKebecd3eTf4ZSxpQQS_z4CIBMSstTcb2v1mHTJ6nE3v-gHRNhMgV9gDCHyfVK2glz4W5XO8II_yhJQ5m1A4fvYq62-_iKopGu_AbvvTWyCO1UM_cojCzpn_3MIQ1");'>
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold bg-primary px-3 py-1 rounded-full">Login
+                                        to Borrow</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-[#111418] dark:text-white text-base font-bold leading-tight truncate">
+                                    To Kill a Mockingbird</p>
+                                <p
+                                    class="text-[#617589] dark:text-[#9aaab9] text-sm font-medium leading-normal truncate">
+                                    Harper Lee</p>
+                            </div>
+                        </div>
+                        <!-- Book Card 4 -->
+                        <div class="flex flex-col gap-3 group cursor-pointer relative">
+                            <div
+                                class="relative w-full aspect-[2/3] overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-shadow">
+                                <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="Book cover of Pride and Prejudice showing classical illustration"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCM5rbfqs5cmT-aCXgjs0iPjQUfXaeNI27x-3PzPMRiQrapHuorGn-I5509jvxtkrGs3DqcobFtUcAlljJHlwBFpZITCvzoqTBuFbTZW1AScpmDPVc0lkQaFLJCD0QGQVXOPNnFo6zx0MvdIS3LyC7vetYmGRlSJ4FrUcSP4FxRr1ELzqLUquIYv5wJJJxPTDxl4Wf_qnNYGszVcvVN6sI9CzwVNiEgOO-AsNnKGhsktnXB8uP1ogovwHNmHDxrdByFNT4d8VQtwpc1");'>
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold bg-primary px-3 py-1 rounded-full">Login
+                                        to Borrow</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-[#111418] dark:text-white text-base font-bold leading-tight truncate">
+                                    Pride and Prejudice</p>
+                                <p
+                                    class="text-[#617589] dark:text-[#9aaab9] text-sm font-medium leading-normal truncate">
+                                    Jane Austen</p>
+                            </div>
+                        </div>
+                        <!-- Book Card 5 -->
+                        <div class="flex flex-col gap-3 group cursor-pointer relative hidden sm:flex">
+                            <div
+                                class="relative w-full aspect-[2/3] overflow-hidden rounded-lg shadow-sm group-hover:shadow-xl transition-shadow">
+                                <div class="w-full h-full bg-center bg-no-repeat bg-cover transition-transform duration-500 group-hover:scale-105"
+                                    data-alt="Book cover of The Catcher in the Rye showing red carousel horse"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCq8PzFD67Tj7PTJVD98O4_Yv-DIGW3tjDDX0xSQtKLOvy77-Ab_MTWOywENtPaYaheAH9576LxIP7zJhoyv-W_lia2p1aON8qTRlfvwxbvGevI-oNs-QItyhCDKL26XbSmTiHWmqK9ZPYvKIYdZGsVQx3DHntueGMfZh3SdnZ7nb5iPa05B-6ZvXLXJD2r0XMVa26DfiKJZs_teSz3IDy9_S3sRPzhz-9f4PDvEDXKmMKqsv5IBQFd0IRUVnbe5xgY8m-0upI7Aoq4");'>
+                                </div>
+                                <div
+                                    class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                                    <span class="text-white text-sm font-bold bg-primary px-3 py-1 rounded-full">Login
+                                        to Borrow</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-[#111418] dark:text-white text-base font-bold leading-tight truncate">
+                                    The Catcher in the Rye</p>
+                                <p
+                                    class="text-[#617589] dark:text-[#9aaab9] text-sm font-medium leading-normal truncate">
+                                    J.D. Salinger</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="modern-card bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300">
-                <div class="text-[#0A66C2] text-2xl mb-4">"</div>
-                <p class="text-[16px] text-[#666] mb-6 leading-relaxed">"A fantastic experience from start to finish. The team was responsive, professional, and truly passionate about our project."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                        <span class="font-bold text-[#0A66C2]">ML</span>
-                    </div>
-                    <div>
-                        <h4 class="text-[18px] font-bold text-[#010205]">Michael Lee</h4>
-                        <p class="text-[#666] text-sm">Founder, Creative Agency</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newsletter Signup Section -->
-    <section class="w-[87%] m-auto mt-[100px] mb-[100px]">
-        <div class="bg-gradient-to-r from-[#0A66C2] to-[#2367ab] py-16 px-8 rounded-xl shadow-2xl text-center">
-            <h2 class="text-[48px] font-bold text-white mb-4">Stay Updated</h2>
-            <p class="text-[18px] font-normal text-white/90 mb-8 max-w-2xl mx-auto">
-                Subscribe to our newsletter for the latest updates, tips, and offers. Join our community of innovators.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4 max-w-2xl mx-auto">
-                <div class="relative flex-grow">
-                    <input type="email" 
-                           placeholder="Enter your email address" 
-                           class="w-full p-4 text-[#010205] rounded-full shadow-lg border-0 focus:outline-none focus:ring-2 focus:ring-white/50 pl-6 pr-12">
-                    <i class="fas fa-envelope absolute right-6 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
-                </div>
-                <button class="bg-white text-[#010205] font-bold py-4 px-8 rounded-full transition-all duration-300 hover:bg-gray-100 hover:shadow-lg shadow-md whitespace-nowrap">
-                    Subscribe Now
-                </button>
-            </div>
-            <p class="text-white/70 text-sm mt-6">We respect your privacy. Unsubscribe anytime.</p>
-        </div>
-    </section>
+        </section>
+    </div>
+</div>
 @endlayout
